@@ -1,15 +1,16 @@
 {
     "name": "kuna-sdk",
-    "version": "0.3.2",
-    "description": "NodeJS SDK for Kuna exchange for API v2",
+    "version": "0.4.20",
+    "description": "NodeJS SDK for Kuna exchange for API v2 and v3",
     "keywords": [
         "kuna.io",
         "cryptocurrency",
-        "exchange api"
+        "exchange api",
+        "kuna api v3"
     ],
     "scripts": {
         "build": "rm -rf ./lib && tsc --esModuleInterop",
-        "test": "mocha -t 2000",
+        "test": "mocha -t 10000",
         "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --bail -t 20000 --slow 99999 -R dot",
         "tag:patch": "yarn version --new-version patch",
         "tag:minor": "yarn version --new-version minor",
@@ -19,25 +20,27 @@
     "homepage": "https://kuna.io",
     "author": "CoinWizard Team <info@coinwizard.me>",
     "license": "LGPL-3.0",
-    "main": "lib/index.js",
+    "main": "./index.js",
     "types": "lib/index.d.ts",
     "dependencies": {
-        "axios": "0.18.0",
+        "axios": "0.19.0",
         "debug": "3.1.0",
-        "lodash": "4.17.10",
-        "qs": "6.5.2"
+        "lodash": "4.17.15",
+        "qs": "6.9.0"
     },
     "devDependencies": {
         "@babel/register": "7.0.0",
-        "@types/lodash": "4.14.116",
-        "@types/node": "10.11.3",
-        "@types/qs": "6.5.1",
+        "@types/lodash": "4.14.139",
+        "@types/node": "12.7.7",
+        "@types/pusher-js": "4.2.2",
+        "@types/qs": "6.5.3",
         "assert": "1.4.1",
         "babel-core": "6.26.3",
         "babel-loader": "7.1.5",
         "babel-preset-es2015": "6.24.1",
         "expect": "23.6.0",
         "mocha": "5.2.0",
-        "typescript": "3.0.1"
+        "moment": "2.24.0",
+        "typescript": "3.6.3"
     }
 }
